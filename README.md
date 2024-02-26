@@ -1,6 +1,6 @@
 # Space Invaders
  
-"Space Invaders" é um projeto 2D de nave para estudos, inspirado no Space Invaders. Explore mecânicas clássicas, aprenda e divirta-se desenvolvendo seu próprio jogo.
+"Space Invaders" é um projeto 2D de nave para estudos e Protótipo, inspirado no Space Invaders. Explore mecânicas clássicas, aprenda e divirta-se desenvolvendo seu próprio jogo.
 
 # Game🎮
 
