@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/alien_shot.wav-abba27e4e6629217fbf07006e7c0234a.sample"
+
+[deps]
+
+source_file="res://space_invaders/Assets/audio espaço/alien_shot.wav"
+dest_files=[ "res://.import/alien_shot.wav-abba27e4e6629217fbf07006e7c0234a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

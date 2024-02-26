@@ -1,0 +1,290 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://space_invaders/Assets/sprites/Ship-sheet.png" type="Texture" id=1]
+[ext_resource path="res://scripts/ship.gd" type="Script" id=2]
+[ext_resource path="res://scenes/enemie.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/alien_grup.gd" type="Script" id=4]
+[ext_resource path="res://scenes/shield.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scripts/game.gd" type="Script" id=6]
+[ext_resource path="res://space_invaders/Assets/fonts/PrStart.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://scripts/life_draw.gd" type="Script" id=8]
+[ext_resource path="res://space_invaders/Assets/audio espaço/ship_explosion.wav" type="AudioStream" id=9]
+[ext_resource path="res://space_invaders/Assets/audio espaço/ship_shoot.wav" type="AudioStream" id=10]
+[ext_resource path="res://space_invaders/Assets/notas/nota1.wav" type="AudioStream" id=12]
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "dead"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.7, 0.8, 1.4, 1.5, 2.1, 2.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 1, 2, 1, 2, 1, 2 ]
+}
+
+[sub_resource type="DynamicFont" id=1]
+size = 8
+extra_spacing_top = 2
+extra_spacing_bottom = 3
+extra_spacing_char = -1
+font_data = ExtResource( 7 )
+
+[node name="game" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="ship" type="Area2D" parent="."]
+position = Vector2( 88.4757, 275.443 )
+collision_mask = 0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="sprite" type="Sprite" parent="ship"]
+texture = ExtResource( 1 )
+hframes = 3
+
+[node name="poly" type="CollisionPolygon2D" parent="ship"]
+position = Vector2( -90, -270 )
+polygon = PoolVector2Array( 98, 274, 82, 274, 82, 270, 90, 266, 98, 270 )
+
+[node name="anim" type="AnimationPlayer" parent="ship"]
+anims/RESET = SubResource( 2 )
+anims/dead = SubResource( 3 )
+
+[node name="audio" type="AudioStreamPlayer" parent="ship"]
+stream = ExtResource( 9 )
+
+[node name="audio2" type="AudioStreamPlayer" parent="ship"]
+stream = ExtResource( 10 )
+
+[node name="alien_group" type="Node2D" parent="."]
+position = Vector2( -8.32468, 36.3744 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="aliens" type="Node2D" parent="alien_group"]
+position = Vector2( 16, 16 )
+
+[node name="enemie" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 27.5612, 36.4849 )
+
+[node name="enemie2" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 43.5612, 36.4849 )
+
+[node name="enemie3" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 75.5612, 36.4849 )
+
+[node name="enemie4" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 59.5612, 36.4849 )
+
+[node name="enemie5" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 91.5612, 36.4849 )
+
+[node name="enemie6" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 107.561, 36.4849 )
+
+[node name="enemie7" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 123.561, 36.4849 )
+
+[node name="enemie8" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 139.561, 36.4849 )
+
+[node name="enemie43" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 27.8418, 47.9902 )
+
+[node name="enemie44" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 43.8418, 47.9902 )
+
+[node name="enemie45" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 75.8418, 47.9902 )
+
+[node name="enemie46" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 59.8418, 47.9902 )
+
+[node name="enemie47" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 91.8418, 47.9902 )
+
+[node name="enemie48" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 107.842, 47.9902 )
+
+[node name="enemie49" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 123.842, 47.9902 )
+
+[node name="enemie50" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 139.842, 47.9902 )
+
+[node name="enemie9" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 27.2806, 14.8824 )
+tipo = 1
+
+[node name="enemie17" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 27.5166, 2.59565 )
+tipo = 2
+
+[node name="enemie18" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 43.5166, 2.59565 )
+tipo = 2
+
+[node name="enemie19" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 59.5166, 2.59565 )
+tipo = 2
+
+[node name="enemie20" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 75.5166, 2.59565 )
+tipo = 2
+
+[node name="enemie21" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 75.5166, 2.59565 )
+tipo = 2
+
+[node name="enemie22" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 91.5166, 2.59565 )
+tipo = 2
+
+[node name="enemie23" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 91.5166, 2.59565 )
+tipo = 2
+
+[node name="enemie24" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 107.517, 2.59565 )
+tipo = 2
+
+[node name="enemie25" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 123.517, 2.59565 )
+tipo = 2
+
+[node name="enemie26" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 139.517, 2.59565 )
+tipo = 2
+
+[node name="enemie10" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 43.2806, 14.8824 )
+tipo = 1
+
+[node name="enemie11" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 59.2806, 14.8824 )
+tipo = 1
+
+[node name="enemie12" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 75.2806, 14.8824 )
+tipo = 1
+
+[node name="enemie13" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 91.2806, 14.8824 )
+tipo = 1
+
+[node name="enemie14" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 107.281, 14.8824 )
+tipo = 1
+
+[node name="enemie15" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 123.281, 14.8824 )
+tipo = 1
+
+[node name="enemie16" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 139.281, 14.8824 )
+tipo = 1
+
+[node name="enemie35" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 27.5612, 26.3877 )
+tipo = 1
+
+[node name="enemie36" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 43.5612, 26.3877 )
+tipo = 1
+
+[node name="enemie37" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 59.5612, 26.3877 )
+tipo = 1
+
+[node name="enemie38" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 75.5612, 26.3877 )
+tipo = 1
+
+[node name="enemie39" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 91.5612, 26.3877 )
+tipo = 1
+
+[node name="enemie40" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 107.561, 26.3877 )
+tipo = 1
+
+[node name="enemie41" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 123.561, 26.3877 )
+tipo = 1
+
+[node name="enemie42" parent="alien_group/aliens" instance=ExtResource( 3 )]
+position = Vector2( 139.561, 26.3877 )
+tipo = 1
+
+[node name="timer_shot" type="Timer" parent="alien_group"]
+
+[node name="timer_move" type="Timer" parent="alien_group"]
+
+[node name="timer_mother_ship" type="Timer" parent="alien_group"]
+one_shot = true
+
+[node name="timer_pause" type="Timer" parent="alien_group"]
+wait_time = 0.2
+one_shot = true
+
+[node name="audio" type="AudioStreamPlayer" parent="alien_group"]
+stream = ExtResource( 12 )
+bus = "audio"
+
+[node name="shields" type="Node2D" parent="."]
+
+[node name="shield" parent="shields" instance=ExtResource( 5 )]
+position = Vector2( 32, 252 )
+
+[node name="shield2" parent="shields" instance=ExtResource( 5 )]
+position = Vector2( 64, 252 )
+
+[node name="shield3" parent="shields" instance=ExtResource( 5 )]
+position = Vector2( 112, 252 )
+
+[node name="shield4" parent="shields" instance=ExtResource( 5 )]
+position = Vector2( 144, 252 )
+
+[node name="HUD" type="Node2D" parent="."]
+
+[node name="label" type="Label" parent="HUD"]
+margin_right = 176.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="life_draw" type="Node2D" parent="HUD"]
+position = Vector2( 2.32998, 311.248 )
+script = ExtResource( 8 )
+textura = ExtResource( 1 )
+
+[connection signal="timeout" from="alien_group/timer_shot" to="alien_group" method="_on_tomer_shot_timeout"]
+[connection signal="timeout" from="alien_group/timer_move" to="alien_group" method="_on_timer_move_timeout"]
+[connection signal="timeout" from="alien_group/timer_mother_ship" to="alien_group" method="_on_timer_mother_ship_timeout"]

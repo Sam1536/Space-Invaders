@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/nota1.wav-b1bec56b4b94f6666da31de570c8f04c.sample"
+
+[deps]
+
+source_file="res://space_invaders/Assets/notas/nota1.wav"
+dest_files=[ "res://.import/nota1.wav-b1bec56b4b94f6666da31de570c8f04c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
